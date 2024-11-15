@@ -1,0 +1,415 @@
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px !important;
+    border-radius: 5px;
+}/* Styles de base pour la page */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5efe6;
+    color: #333;
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+}
+/* Grid layout pour la sidebar et le contenu principal */
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    height: 100vh; /* Prendre toute la hauteur de la fenêtre */
+    margin: 0;
+}
+
+
+/* Styles pour la sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #C49D83;
+    padding: 20px !important;
+    height: 100%; /* Prendre 100% de la hauteur */
+    margin: 0; /* Enlève tout écart */
+    padding: 0; /* Enlève tout padding par défaut */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #D5CABC;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px !important;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+/* Styles pour l'en-tête */
+header {
+    grid-area: header;
+    background-color: #4b3e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Enlève l'espace au-dessus */
+    padding: 0; /* Enlève le padding */
+    width: 100%; /* Assure que le header prend toute la largeur */
+    height: 100px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Styles pour le contenu principal */
+.main-content {
+    grid-area: main-content;
+    padding: 40px;
+    overflow-y: auto; /* Permet le défilement si le contenu dépasse */
+    margin: 0;
+    padding: 0;
+}
+
+/* Section pour l'ajout de vacances */
+form {
+    background-color: #E8D5CC;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="date"] {
+    width: 96%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #C49D83;
+}
+
+button {
+    background-color: #C49D83;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #A3876A;
+}
+
+/* Styles pour la table des vacances */
+.table-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-height: 400px; /* Limite la hauteur du tableau */
+    overflow-y: auto; /* Permet le défilement vertical */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #E8D5CC;
+    color: #4b3e3b;
+}
+
+tr:nth-child(even) {
+    background-color: #f5efe6;
+}
+
+tr:hover {
+    background-color: #f0e4d7;
+    cursor: pointer;
+}
+img {
+    width: 150px;
+    height: 150px;
+    object-fit:contain; /* Couvre tout le cadre sans déformer */
+    border-radius: 50%; /* Optionnel, pour une image ronde */
+}
+
+td {
+    border-bottom: 1px solid #D5CABC;
+}
+
+/* Bouton supprimer */
+button.delete-btn {
+    background-color: #FF6B6B;
+}
+
+button.delete-btn:hover {
+    background-color: #e84141;
+}
+
+/* Boutons de succès et d'annulation */
+.success-message, .error-message {
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+.cancel-btn {
+    background-color: #d9534f; /* Rouge pour annuler */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;
+}
+
+.cancel-btn:hover {
+    background-color: #c9302c; /* Rouge plus foncé au survol */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 20px; /* Espace au-dessus des boutons */
+}
+/* Media queries pour les tablettes (écran < 1024px) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .sidebar .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    header h1 {
+        font-size: 2rem; /* Réduit la taille de l'en-tête */
+    }
+
+    .table-container {
+        max-width: 700px;
+    }
+}
+
+/* Media queries pour les téléphones (écran < 768px) */
+/* Media queries pour les téléphones (écran < 768px) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+
+        padding: 10px !important;
+    }
+    .sidebar nav ul li{
+        margin: 10px 0;
+    }
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+    .profile h2{
+        font-size:  16px;
+        margin: 0;
+    padding: 0;
+    }
+    .profile p{
+        
+        margin: 0;
+    padding: 0;
+    }
+    .profile{
+        box-sizing:border-box;
+        text-align:center;
+        padding:0;
+    }
+    .main-content {
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+    
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header {
+        margin-left: 0;
+        width: 100%;
+        text-align: center; /* Centrer le texte en version mobile */
+        padding: 10px 0;
+        height: 80px;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Réduit la taille du texte pour mobile */
+        padding: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .table-container {
+        max-width: 100%;
+        padding: 10px;
+        max-height: 300px; /* Réduit la hauteur du tableau sur mobile */
+    }
+
+    /* Ajuste la taille des formulaires sur mobile */
+    form {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    input[type="date"] {
+        width: 93%; /* Assure que les champs prennent toute la largeur */
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Réduit l'espacement entre les éléments */
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+      
+        margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    }
+}
+
+
+/* Media queries pour les très petits écrans (écran < 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+        box-sizing:border-box;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Réduit la taille des liens de la sidebar */
+        margin: 0;
+    padding: 0;
+    }
+
+    .table-container {
+        max-width: 100%;
+        padding: 5px;
+        max-height: 250px;
+    }
+
+    form div {
+        margin-bottom: 10px;
+    }
+
+    input[type="date"] {
+        width: 93%;
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,612 @@
+/* Reset et styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+
+body {
+    background-color: #BDA18A;
+    color: #4b3e3b;
+    line-height: 1.6;
+}
+
+/* Header avec image de fond */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/photo-1677155875750-9eb42b39f4e5.jfif') no-repeat center center/cover fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px; /* Ajuste en fonction de la hauteur du nav */
+}
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+/* Cacher les liens de navigation sur mobile par défaut */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.nav-links li {
+    margin-right: 20px;
+}
+
+/* Pousse les boutons complètement à droite */
+.nav-links .btn {
+    margin-left: auto; /* Le bouton "Mon Compte", "Connexion" ou "Inscription" commence ici */
+}
+
+.nav-links .btn {
+    background-color: #C49D83;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav-links .btn:hover {
+    background-color: #A3876A;
+}
+/* Navigation container */
+nav {
+    display: flex;
+    justify-content: space-between; /* Espace entre la navigation et les boutons */
+    align-items: center; /* Centrage vertical des éléments */
+    padding: 15px 20px; /* Ajustement des marges */
+    background-color: #4b3e3b; /* Couleur de fond de la navigation */
+    position: fixed; /* Fixe la navigation en haut de la page */
+    top: 0; /* Positionné tout en haut */
+    left: 0;
+    width: 100%; /* Occupe toute la largeur */
+    z-index: 1000; /* Assure que la navigation est au-dessus du contenu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour donner du relief */
+}
+
+/* Liste de navigation à gauche */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espace entre les éléments de navigation */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #BDA18A;
+}
+
+/* Section héros */
+.hero-text {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #BDA18A;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8c7c6e;
+}
+
+/* Boutons de connexion et d'inscription */
+.auth-buttons {
+    display: flex;
+    gap: 15px; /* Espace entre les boutons */
+}
+
+.auth-buttons .btn {
+    background-color: #BDA18A;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #8c7c6e;
+}
+
+.auth-buttons .login-btn {
+    background-color: #BDA18A;
+    border: 2px solid #BDA18A;
+}
+
+.auth-buttons .signup-btn {
+    background-color: #4b3e3b;
+    border: 2px solid #4b3e3b;
+}
+
+.auth-buttons .login-btn:hover {
+    background-color: transparent;
+    color: #BDA18A;
+}
+
+.auth-buttons .signup-btn:hover {
+    background-color: transparent;
+    color: #BDA18A;
+}
+
+/* Sections de contenu */
+section {
+    padding: 80px 50px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4b3e3b;
+}
+
+section p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #6f5f57;
+    font-size: 1.2em;
+}
+
+/* Section à propos */
+.about-section {
+    background-color: #E8D5CC;
+}
+
+/* Section des services */
+.services-section {
+    background-color: #D5CABC;
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #BDA18A;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 15px;
+}
+
+/* Section de rendez-vous */
+.appointment-section {
+    background: url('images/94382.jpg') no-repeat center center/cover fixed;
+    
+}
+
+/* Section de contact */
+.contact-section {
+    background-color: #f5efe6;
+}
+
+/* Pied de page */
+footer {
+    background-color: #BDA18A;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+.fc-event-bg {
+    opacity: 0.5; /* Assure une transparence correcte pour les événements de fond */
+}
+
+/* Mise en page avec flexbox */
+/* Mise en page avec flexbox, formulaire à droite */
+.rdv-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+.admin-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.admin-btn:hover {
+    background-color: #555;
+}
+/* Style du formulaire */
+#reservation-form {
+    flex: 1;
+    max-width: 300px;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Caché par défaut, affiché après sélection d'une date */
+}
+
+/* Taille du calendrier */
+#calendar {
+    flex: 2;
+    max-width: 1000px;
+    background-color: #f5efe6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons horaires */
+.hour-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #BDA18A;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.hour-button:hover {
+    background-color: #8c7c6e;
+}
+
+/* Bouton de validation */
+#submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #BDA18A;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #8c7c6e;
+}
+
+/* Couleur pour les week-ends */
+.weekend-day {
+    background-color: #FFDDC1 !important;
+    opacity: 0.8;
+}
+.fc-button {
+    background-color: #BDA18A; /* Couleur de fond pour tous les boutons */
+    color: white; /* Couleur du texte des boutons */
+    border: none; /* Enlever la bordure */
+    border-radius: 5px; /* Arrondir les bords */
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.fc-button:hover {
+    background-color: #8c7c6e; /* Changer la couleur au survol */
+}
+
+.fc-button-primary {
+    background-color: #BDA18A !important; /* Couleur des boutons Previous, Next, et Today */
+    color: white !important;
+}
+
+.fc-button-primary:hover {
+    background-color: #8c7c6e !important; /* Couleur au survol */
+}
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.auth-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column; /* Mettre les services en colonne sur mobile */
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%; /* La taille des services est plus grande et adaptée au mobile */
+        margin-bottom: 20px; /* Espacement entre chaque service */
+    }
+    /* Ajustement des sections */
+    section {
+        padding: 40px 20px;
+    }
+
+    /* Taille du texte de la section héro */
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Ajustement du conteneur de rendez-vous */
+    .rdv-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Le formulaire et le calendrier prennent toute la largeur */
+    #reservation-form,
+    #calendar {
+        max-width: 100%;
+    }
+    .menu-toggle {
+        display: block; /* Afficher le bouton hamburger sur mobile */
+    }
+
+    .nav-links {
+        display: none; /* Masquer le menu par défaut sur mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #4b3e3b;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Afficher le menu lorsque la classe active est ajoutée */
+        flex-direction: column; /* Les liens sont verticales */
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+
+    /* Afficher les boutons Connexion et Inscription côte à côte */
+    .nav-links li:last-child,
+    .nav-links li:nth-last-child(2) {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Espace entre les deux boutons */
+    }
+
+    .nav-links .btn {
+        background-color: #BDA18A;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-align: center;
+        display: inline-block;
+        width: auto; /* Les boutons ne prennent pas toute la largeur */
+    }
+
+    .nav-links .btn:hover {
+        background-color: #8c7c6e;
+    }
+    #calendar {
+        max-width: 100%; /* Le calendrier occupe toute la largeur disponible */
+        padding: 10px; /* Réduire les marges internes pour un affichage plus compact */
+    }
+
+    .fc-daygrid-event {
+        font-size: 0.8em; /* Réduire la taille du texte pour plus de lisibilité */
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.2em; /* Réduire la taille du titre (mois et année) */
+    }
+
+    .fc-button {
+        padding: 5px 10px; /* Réduire la taille des boutons (Previous, Next, Today) */
+        font-size: 0.9em;
+    }
+
+    .fc-daygrid-day {
+        padding: 5px; /* Réduire la taille des jours pour plus d'espace */
+    }
+
+    .fc-scrollgrid-sync-inner {
+        height: auto !important; /* Ajuster la hauteur des cellules pour les petits écrans */
+    }
+    .typewriter h1, .typewriter p {
+        font-size: 1.5em; /* Ajuste la taille du texte pour qu'il s'affiche mieux sur mobile */
+        animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+        white-space:break-spaces !important;
+        
+    }
+}
+
+/* Responsive pour les très petits écrans (téléphones) */
+@media (max-width: 480px) {
+    .service-item {
+        width: 100%; /* La largeur des services occupe toute la largeur sur très petits écrans */
+        margin-bottom: 20px;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Les boutons prennent toute la largeur */
+    .btn, .hour-button, #submit-btn {
+        width: 100%;
+        padding: 15px;
+    }
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px; /* Espace vertical entre les boutons */
+    }
+    #calendar {
+        padding: 5px; /* Encore moins de padding pour les très petits écrans */
+    }
+
+    .fc-toolbar-title {
+        font-size: 1em; /* Taille encore plus réduite pour le titre */
+    }
+
+    .fc-button {
+        font-size: 0.8em;
+        padding: 5px 8px; /* Ajuster la taille des boutons pour encore plus de confort */
+    }
+
+    .fc-daygrid-day {
+        padding: 3px; /* Moins d'espace autour des jours */
+    }
+}
+/* Style général pour le select */
+select {
+    appearance: none; /* Supprimer le style par défaut du select */
+    -webkit-appearance: none; /* Pour Safari */
+    -moz-appearance: none; /* Pour Firefox */
+    background-color: #BDA18A;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    width: 100%; /* Pour prendre toute la largeur disponible */
+    max-width: 300px; /* Taille maximale si nécessaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style au survol */
+select:hover {
+    background-color: #A3876A;
+}
+
+/* Style au focus (quand l'utilisateur clique dessus) */
+select:focus {
+    box-shadow: 0 0 0 3px rgba(189, 161, 138, 0.6); /* Ajouter un effet de focus */
+}
+
+/* Flèche personnalisée */
+select::-ms-expand {
+    display: none; /* Cacher la flèche par défaut dans IE */
+}
+
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Ajouter une icône de flèche à droite du select */
+.select-container::after {
+    content: '▼'; /* Icône de la flèche */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Empêche la flèche d'interférer avec les clics */
+    color: white;
+    font-size: 1em;
+}
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+/* Style pour le texte de l'effet machine à écrire */
+.typewriter h1, .typewriter p {
+    overflow: hidden;
+    border-right: .15em solid #BDA18A; /* Couleur de l'animation de curseur */
+    white-space:nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Animation de l'effet de saisie */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animation du curseur clignotant */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #BDA18A; }
+}

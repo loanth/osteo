@@ -1,0 +1,347 @@
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px !important;
+    border-radius: 5px;
+}/* Styles de base pour la page *//* Style global */
+body, html {
+    background-color: #C49D83;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  
+    color: #333;
+}
+
+/* Conteneur principal en grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #C49D83;
+    padding: 20px !important;
+    height: 100%; /* Prendre 100% de la hauteur */
+    margin: 0; /* Enlève tout écart */
+    padding: 0; /* Enlève tout padding par défaut */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 150px;
+    height: 150px;
+    object-fit:contain; /* Couvre tout le cadre sans déformer */
+    border-radius: 50%; /* Optionnel, pour une image ronde */
+}
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.profile h2 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+        padding: 0;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #D5CABC;
+    margin: 0;
+        padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px !important;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* En-tête */
+header {
+    grid-area: header;
+    background-color: #4b3e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Enlève l'espace au-dessus */
+    padding: 0; /* Enlève le padding */
+    width: 100%; /* Assure que le header prend toute la largeur */
+    height: 100px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenu principal */
+.main-content {
+    grid-area: main-content;
+    padding: 20px;
+    background-color: #f5efe6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section des stats */
+.dashboard-stats {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.stat-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-grow: 1;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+.stat-box i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4b3e3b;
+}
+
+.stat-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #4b3e3b;
+}
+
+.stat-box p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Section des graphiques */
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles Responsive */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .sidebar .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    header h1 {
+        font-size: 2rem; /* Réduit la taille de l'en-tête */
+    }
+
+    .stat-box {
+        font-size: 0.9rem;
+    }
+
+    .charts {
+        flex-direction: column;
+        padding-right: 20px;
+    }
+
+    .chart-container {
+        width: 100%;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+
+        padding: 10px !important;
+    }
+    .sidebar nav ul li{
+        margin: 10px 0;
+    }
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+    .profile h2{
+        font-size:  16px;
+        margin: 0;
+    padding: 0;
+    }
+    .profile p{
+        
+        margin: 0;
+    padding: 0;
+    }
+    .profile{
+        box-sizing:border-box;
+        text-align:center;
+        padding:0;
+    }
+    .main-content {
+        margin-left: 0;
+        box-sizing: border-box;
+        width: 414px;
+        margin-right: 0;
+    }
+    
+    .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header {
+        margin-left: 0;
+        width: 100%;
+        text-align: center; /* Centrer le texte en version mobile */
+        padding: 10px 0;
+        height: 80px;
+        box-sizing: border-box;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Réduit la taille du texte pour mobile */
+        padding: 0;
+    }
+
+   
+    nav ul li a {
+      
+        margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    }
+    .dashboard-stats {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        margin-bottom: 20px;
+    }
+
+    .chart-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+        box-sizing:border-box;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Réduit la taille des liens de la sidebar */
+        margin: 0;
+    padding: 0;
+    }
+
+    .sidebar .profile h2 {
+        font-size: 16px;
+    }
+
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chart-container {
+        padding: 10px;
+    }
+}

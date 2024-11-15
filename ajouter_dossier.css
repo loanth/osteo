@@ -1,0 +1,382 @@
+/* Styles globaux et sidebar */
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px;
+    border-radius: 5px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #C49D83;
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Conteneur principal en grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #C49D83;
+    padding: 20px;
+    height: 100vh;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.profile h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #D5CABC;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+/* En-tête */
+header {
+    grid-area: header;
+    background-color: #4b3e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.main-content {
+    grid-area: main-content;
+    padding: 20px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5efe6;
+}
+
+
+/* Bouton de suppression */
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+/* Styles pour la page Ajouter un Dossier */
+
+/* Conteneur du formulaire */
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre du formulaire */
+.form-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #4b3e3b;
+    margin-bottom: 20px;
+}
+
+/* Styles de base pour les champs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #C49D83;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f9f4f0;
+    resize: vertical;
+}
+
+/* Champ de texte pour les descriptions */
+.form-group textarea {
+    min-height: 80px;
+}
+
+/* Boutons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button-container .submit-btn {
+    background-color: #4b3e3b;
+    color: white;
+}
+
+.button-container .submit-btn:hover {
+    background-color: #3b2e2c;
+}
+
+.button-container .reset-btn {
+    background-color: #c4c4c4;
+    color: #333;
+}
+
+.button-container .reset-btn:hover {
+    background-color: #a3a3a3;
+}
+
+/* Styles pour les champs de téléchargement de fichiers */
+.file-input-container {
+    margin-bottom: 15px;
+}
+
+.file-input-container input[type="file"] {
+    display: block;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+.file-preview {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.file-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.btn-submit {
+    background-color: #4b3e3b; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Enlever la bordure */
+    border-radius: 5px; /* Bords arrondis */
+    padding: 12px 24px; /* Espacement interne */
+    font-size: 1rem; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Effet de transition */
+    width: 100%; /* Largeur du bouton pour s'adapter au formulaire */
+    max-width: 300px; /* Largeur maximale pour que le bouton ne soit pas trop large */
+    margin-top: 20px; /* Espace au-dessus */
+}
+
+/* Effet au survol */
+.btn-submit:hover {
+    background-color: #3b2e2c; /* Couleur de fond au survol */
+    transform: scale(1.05); /* Agrandissement léger */
+}
+
+/* Effet au clic */
+.btn-submit:active {
+    transform: scale(0.98); /* Réduction légère pour effet de clic */
+}
+.file-input {
+    display: none;
+}
+
+/* Style pour le bouton de sélection de fichiers */
+.file-label {
+    background-color: #4b3e3b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet au survol */
+.file-label:hover {
+    background-color: #3b2e2c;
+    transform: scale(1.05);
+}
+
+/* Effet au clic */
+.file-label:active {
+    transform: scale(0.98);
+}
+
+/* Pour un alignement cohérent avec d'autres boutons */
+.file-label-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.file-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+    text-align: center;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-submit {
+        font-size: 1rem; /* Taille de police ajustée pour petits écrans */
+        padding: 10px 20px; /* Réduction de l'espacement pour s'adapter aux écrans plus petits */
+        width: 100%; /* Largeur à 100% pour l'adapter au formulaire sur mobile */
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .sidebar .profile h2 {
+        font-size: 16px;
+    }
+
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .form-group label,
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .button-container button {
+        font-size: 0.9rem;
+    }
+}

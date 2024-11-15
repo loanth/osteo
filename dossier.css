@@ -1,0 +1,451 @@
+/* Styles globaux et sidebar */
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px;
+    border-radius: 5px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #C49D83;
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Conteneur principal en grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #C49D83;
+    padding: 20px;
+    height: 100vh;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.profile h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #D5CABC;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+/* En-tête */
+header {
+    grid-area: header;
+    background-color: #4b3e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.main-content {
+    grid-area: main-content;
+    padding: 20px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5efe6;
+}
+
+
+/* Bouton de suppression */
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+.filters-form {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f5efe6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-form form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-weight: bold;
+    color: #4b3e3b;
+    margin-bottom: 5px;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 8px;
+    border: 1px solid #C49D83;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+}
+
+.filters-form button {
+    padding: 10px 20px;
+    background-color: #4b3e3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.filters-form button:hover {
+    background-color: #3b2e2c;
+}
+
+
+/* Styles pour le conteneur de table */
+.table-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Styles pour le tableau */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.table-container th {
+    background-color: #C49D83;
+    color: white;
+    font-weight: bold;
+}
+
+.table-container td {
+    background-color: #f5efe6;
+}
+
+.table-container tr:hover td {
+    background-color: #f0dfd5;
+}
+.table-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.button-container {
+    text-align: right;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.add-dossier-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4b3e3b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.add-dossier-btn i {
+    margin-right: 5px;
+}
+
+.add-dossier-btn:hover {
+    background-color: #3b2e2c;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+
+    .sidebar {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
+    }
+
+    .table-container th, .table-container td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .filters-form input[type="text"],
+    .filters-form input[type="date"],
+    .filters-form select {
+        width: 100%;
+    }
+
+    .table-container th,
+    .table-container td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .table-container table,
+    .table-container thead,
+    .table-container tbody,
+    .table-container th,
+    .table-container td,
+    .table-container tr {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hide table headers on mobile */
+    .table-container thead tr {
+        display: none;
+    }
+
+    .table-container tbody tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f5efe6;
+    }
+
+    .table-container td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-size: 0.9rem;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table-container td:last-child {
+        border-bottom: none;
+    }
+
+    /* Add labels for each cell */
+    .table-container td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #4b3e3b;
+        flex: 1;
+        padding-right: 10px;
+        text-align: left;
+    }
+    .filters-form form {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-form button {
+        width: 100%; /* Le bouton de filtre prend toute la largeur */
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .sidebar .profile h2 {
+        font-size: 16px;
+    }
+
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+    .table-container tbody tr {
+        margin-bottom: 15px;
+        padding: 8px;
+    }
+
+    .table-container td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    .table-container th, .table-container td {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    .filters-form {
+        padding: 15px;
+    }
+
+    .filters-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filters-form input,
+    .filters-form select,
+    .filters-form button {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .filters-form label {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .filters-form button {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .table-container th,
+    .table-container td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}

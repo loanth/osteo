@@ -1,0 +1,297 @@
+.fc .fc-timegrid-slot{
+    height: 4.7em ;
+}
+/* Reset de base */
+nav ul li a.active {
+    background-color: #A3876A;
+    padding: 10px;
+    border-radius: 5px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Le html et body doivent prendre 100% de hauteur */
+html, body {
+    background-color: #C49D83;
+    height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Conteneur principal en grille */
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main-content";
+    height: 100vh; /* Utiliser 100% de la hauteur de la fenêtre */
+}
+img {
+    width: 150px;
+    height: 150px;
+    object-fit:contain; /* Couvre tout le cadre sans déformer */
+    border-radius: 50%; /* Optionnel, pour une image ronde */
+}
+
+/* Barre latérale */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #C49D83;
+    padding: 20px;
+    height: 100vh; /* Utiliser 100% de la hauteur */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #D5CABC;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 10px;
+}
+
+/* En-tête */
+header {
+    grid-area: header;
+    background-color: #4b3e3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px; /* Fixer la hauteur de l'en-tête */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.main-content {
+    grid-area: main-content;
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 80px); /* Prendre la hauteur restante après l'en-tête */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Calendrier */
+#calendar {
+    width: 100%;
+    height: 100%; /* Prendre toute la hauteur du conteneur principal */
+    background-color: #f5efe6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Désactiver la hauteur forcée des cellules pour laisser FullCalendar s'adapter */
+
+.fc .fc-button-primary{
+    background-color:#4b3e3b ;
+}
+.fc-direction-ltr .fc-timegrid-col-events{
+    margin: 0 0 0 0 !important;
+}
+.fc .fc-button-primary:disabled{
+    background-color: #4b3e3b !important;
+    border-color: #4b3e3b !important;
+}
+.fc .fc-button-primary{
+    background-color: #4b3e3b !important;
+    border-color: #4b3e3b !important;
+}
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+
+    
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main-content";
+    }
+    .fc .fc-timegrid-slot{
+        height: 2.8em !important;
+    }
+    .sidebar {
+        height: auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sidebar .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    header {
+        margin-left: 0;
+        width: 100%;
+        text-align: center; /* Centrer le texte en version mobile */
+        padding: 10px 0;
+    }
+    .fc-timegrid-slot {
+        height: 50px !important;
+        background-color: #f5efe6; /* Ajuster automatiquement la hauteur des cellules */
+    }
+    header h1 {
+        font-size: 1.5rem; /* Réduire la taille du texte */
+        margin: 0 10px; /* Ajouter un peu de marge à gauche et à droite pour éviter que le texte dépasse */
+        word-wrap: break-word; /* Forcer le texte à passer à la ligne si nécessaire */
+    }
+    .fc-toolbar-chunk {
+        display: flex;
+        flex-direction: column; /* Aligner les éléments verticalement */
+        align-items: center;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.2rem; /* Réduire la taille du titre pour les petits écrans */
+        margin-bottom: 10px;
+    }
+
+    .fc-button-group {
+        justify-content: center; /* Centrer les boutons */
+        margin-bottom: 10px; /* Ajouter de l'espace en bas des boutons */
+        gap: 5px; /* Espacement entre les boutons */
+    }
+
+    .fc-button {
+        width: 100%; /* Les boutons occupent toute la largeur */
+        text-align: center;
+    }
+
+    .fc .fc-button-primary {
+        background-color: #4b3e3b;
+    }
+
+    .fc .fc-button-primary:hover {
+        background-color: #3b2e2c;
+    }
+    .delete-btn {
+        width: 100%; /* Prendre toute la largeur pour un bouton plus grand sur mobile */
+        text-align: center; /* Centrer le texte du bouton */
+        margin: 10px 0; /* Ajouter de l'espace autour du bouton */
+        font-size: 1rem; /* Augmenter la taille du texte pour être lisible sur mobile */
+    }
+
+    /* S'assurer que l'événement du calendrier n'écrase pas le bouton "Delete" */
+    .fc-event {
+        position: relative;
+        overflow: visible; /* Assurer que tout le contenu de l'événement est visible */
+    }
+
+    .fc-event .fc-event-main {
+        overflow: visible; /* Assurer que les éléments comme le bouton sont visibles */
+    }
+}
+
+/* Version pour très petits écrans */
+@media (max-width: 480px) {
+    .sidebar .profile h2 {
+        font-size: 16px;
+    }
+
+    .sidebar .profile img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.2rem; /* Réduire encore la taille du texte pour les petits écrans */
+    }
+}
+
+/* Écran 24 pouces (1920x1080) */
+@media (min-width: 1366px) and (max-width: 1920px) and (max-height: 1080px) and (orientation: landscape) {
+    .fc .fc-timegrid-slot {
+        height: 3.45em !important;
+    }
+    .delete-btn {
+        padding: 0 0;
+    }
+}
+
+/* ZenBook 15 pouces en 1920x1080 */
+@media (min-width: 1280px) and (max-width: 1920px) and (max-height: 1080px) and (orientation: landscape) {
+    .fc .fc-timegrid-slot {
+        height: 2.45em !important;
+    }
+    .delete-btn {
+        padding: 0 0;
+    }
+}
+
+/* ZenBook 15 pouces en 4K (3840x2160) */
+@media (min-width: 2560px) and (max-width: 3840px) and (max-height: 2160px) and (orientation: landscape) {
+    .fc .fc-timegrid-slot {
+        height: 2.45em !important;
+    }
+    .delete-btn {
+        padding: 0 0;
+    }
+}

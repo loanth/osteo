@@ -1,0 +1,144 @@
+/* Reset pour éviter des comportements inattendus */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps et fond général */
+body {
+    background-image: url(./images/photo-1677155875750-9eb42b39f4e5.jfif);
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover;
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal des pages de connexion et inscription */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Boîte principale des formulaires */
+.auth-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%; /* Assure que le conteneur utilise toute la largeur disponible */
+    text-align: center;
+}
+
+/* Titre principal */
+.auth-box h2 {
+    color: #4b3e3b;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Groupe de champs de saisie */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    color: #4b3e3b;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%; /* Assure que les inputs occupent toute la largeur */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f5efe6;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Assure que le padding est bien inclus dans la largeur */
+}
+
+.input-group input:focus {
+    border-color: #BDA18A;
+    outline: none;
+}
+
+/* Boutons d'action (Connexion / Inscription) */
+.btn {
+    background-color: #BDA18A;
+    color: white;
+    padding: 12px 20px; /* Gérer les marges internes */
+    width: 100%; /* Assure que le bouton occupe toute la largeur disponible */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Assure que le padding est bien inclus dans la largeur */
+}
+
+.btn:hover {
+    background-color: #8c7c6e;
+}
+
+/* Lien sous le formulaire (redirection vers inscription ou connexion) */
+.auth-link {
+    margin-top: 20px;
+    color: #6f5f57;
+}
+
+.auth-link a {
+    color: #BDA18A;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-link a:hover {
+    color: #8c7c6e;
+}
+
+/* Message d'erreur */
+.error-message {
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+    .auth-box {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+/* Bouton Retour */
+/* Bouton Retour en haut à gauche */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #6f5f57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #4b3e3b; /* Couleur du bouton au survol */
+}

@@ -1,0 +1,118 @@
+/* Reset et styles généraux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+}
+
+body {
+    background-image: url(./images/bharath-mohan-JHZye99eeaU-unsplash\ \(1\).jpg);
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* Ajuste l'image pour couvrir toute la section */
+    background-position: center;
+    color: #4b3e3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Bouton de retour à l'accueil */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button .btn {
+    background-color: #BDA18A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button .btn:hover {
+    background-color: #8c7c6e;
+}
+
+/* Conteneur principal de la page Mon Compte */
+.account-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4b3e3b;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    color: #6f5f57;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #BDA18A;
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #8c7c6e;
+}
+
+/* Boutons Modifier et Supprimer */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modifier-btn {
+    background-color: #BDA18A;
+    color: white;
+}
+
+.modifier-btn:hover {
+    background-color: #8c7c6e;
+}
+
+.supprimer-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+.supprimer-btn:hover {
+    background-color: #c9302c;
+}
